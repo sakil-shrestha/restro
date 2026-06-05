@@ -16,13 +16,15 @@ class TableService
          ]);
     }
 
-    public function updateStatus()
+    public function updateStatus(string $status,Table $table)
     {
-
+        return $table->update([
+            'status'=>$status,
+        ]);
     }
-    public function delete()
+    public function delete($table)
     {
-
+        return $table->delete();
     }
 
 }

@@ -6,6 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class MenuItem extends Model
 {
+
+    protected $fillable = [
+        'name',
+        'category_id',
+        'price',
+        'image',
+        'description',
+        'is_available',
+
+    ];
     public function category()
     {
         return $this->belongsTo(Category::class);

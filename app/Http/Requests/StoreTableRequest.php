@@ -24,7 +24,8 @@ class StoreTableRequest extends FormRequest
     {
         return [
             'table_number'=>'required',
-            'capacity'=>'required|integer|min:1|max:20'
+            'capacity'=>'required|integer|min:1|max:20',
+            'status'=>'required|in:available,occupied,reserved',
         ];
     }
 }

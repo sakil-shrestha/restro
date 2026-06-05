@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    protected $fillable = [
+        'table_id',
+        'customer_id',
+        'waiter_id',
+        'status',
+        'notes',
+
+    ];
     public function table()
     {
         return $this->belongsTo(Table::class);

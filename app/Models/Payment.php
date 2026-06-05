@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Payment extends Model
 {
+    protected $fillable = [
+        'bill_id',
+        'amount',
+        'method',
+        'status',
+
+    ];
     public function bill()
     {
         return $this->belongsTo(Bill::class);
