@@ -48,6 +48,8 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
+                                        {{-- sweet alert button --}}
+                                        {{-- <button class="btn btn-danger" id="swal-6" type="submit">Delete</button> --}}
                                     </form>
                                 </td>
                             </tr>
@@ -90,7 +92,7 @@
                         throw new Error('Network Error')
                     }
                     const data = await response.json();
-                    console.log(data);
+
                     alert(data.message);
 
 

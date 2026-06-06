@@ -17,11 +17,18 @@
                     <label>Table Number</label>
                     <input name="table_number" type="text" class="form-control" placeholder="eg. Table 1"
                         value="{{ old('table_number', $table->table_number) }}">
+
+                         @error('table_number')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label>Table capacity</label>
                     <input name="capacity" type="number" class="form-control"
                         value="{{ old('capacity', $table->capacity) }}">
+                         @error('capacity')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="form-group">

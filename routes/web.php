@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TableController;
 use Illuminate\Support\Facades\Route;
@@ -20,8 +21,14 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function()
 {
+
+    // Table Routes
     Route::resource('table',TableController::class);
     Route::patch('table/{table}/status',[TableController::class,'updateStatus']);
+
+    // category routes
+    Route::resource('category',CategoryController::class);
+    Route::patch('category/{category}/status',[CategoryController::class,'updateStatus']);
 });
 
 require __DIR__.'/auth.php';

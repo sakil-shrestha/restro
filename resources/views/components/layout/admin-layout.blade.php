@@ -16,6 +16,7 @@
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
   <link rel='shortcut icon' type='image/x-icon' href='{{asset('assets/img/favicon.ico')}}' />
+   <link rel="stylesheet" href="{{asset('assets/bundles/summernote/summernote-bs4.css')}}">
 </head>
 
 <body>
@@ -152,6 +153,11 @@
   <script src="{{asset('assets/js/scripts.js')}}"></script>
   <!-- Custom JS File -->
   <script src="{{asset('assets/js/custom.js')}}"></script>
+
+    <script src="{{asset('assets/bundles/sweetalert/sweetalert.min.js')}}"></script>
+  <!-- Page Specific JS File -->
+  <script src="{{asset('assets/js/page/sweetalert.js')}}"></script>
+   <script src="{{asset('assets/bundles/summernote/summernote-bs4.js')}}"></script>
 </body>
 
 

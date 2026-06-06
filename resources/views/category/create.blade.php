@@ -1,39 +1,41 @@
 <x-layout.admin-layout>
     <div class="card">
         <div class="card-header d-flex justify-content-between">
-            <h4>Add Table Information</h4>
+            <h4>Add Category Information</h4>
             <div class="text-right">
-                <a href="{{ route('table.index') }}" class="btn btn-outline-secondary me-1">
+                <a href="{{ route('category.index') }}" class="btn btn-outline-secondary me-1">
                     &larr; Back
                 </a>
 
             </div>
         </div>
         <div class="card-body">
-            <form action="{{ route('table.store') }}" method="POST">
+            <form action="{{ route('category.store') }}" method="POST">
                 @csrf
 
                 <div class="form-group">
-                    <label>Table Number</label>
-                    <input name="table_number" type="text" class="form-control" placeholder="eg. Table 1">
-                     @error('table_number')
+                    <label>Category Name</label>
+                    <input name="name" type="text" class="form-control" placeholder="eg. Veg" value="{{old('name')}}">
+                    @error('name')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
+
                 <div class="form-group">
-                    <label>Table capacity</label>
-                    <input name="capacity" type="number" class="form-control">
-                     @error('capacity')
+                    <label>Description</label>
+                    <textarea name="description" class="summernote"> {{old('description')}}</textarea>
+                    @error('description')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
+
+
                 </div>
 
                 <div class="form-group">
                     <label>status</label>
                     <select name="status" class="form-control select2">
-                        <option value="available">Available</option>
-                        <option value="occupied">Occupied</option>
-                        <option value="reserved">Reserved</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
                     </select>
                 </div>
 
