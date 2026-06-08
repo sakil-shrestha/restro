@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TableController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,12 @@ Route::middleware('auth')->group(function()
     // category routes
     Route::resource('category',CategoryController::class);
     Route::patch('category/{category}/status',[CategoryController::class,'updateStatus']);
+
+    //Menu routes
+    Route::resource('menu',MenuController::class);
+    Route::patch('menu/{menu}/status',[MenuController::class,'updateStatus']);
+
+
 });
 
 require __DIR__.'/auth.php';
