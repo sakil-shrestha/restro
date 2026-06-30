@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('table_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('customer_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('waiter_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('customer_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('waiter_id')->nullable()->constrained('users')->cascadeOnDelete();
             $table->enum('status', [
                 'pending',
                 'preparing',

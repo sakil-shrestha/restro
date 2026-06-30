@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\orderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TableController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,7 @@ Route::middleware('auth')->group(function()
     //Menu routes
     Route::resource('menu',MenuController::class);
     Route::patch('menu/{menu}/status',[MenuController::class,'updateStatus']);
+    Route::resource('order',orderController::class);
 
 
 });

@@ -27,7 +27,7 @@
             <li class="{{request()->routeIs('category.*')?'active':''}}"><a class="nav-link" href="{{route('category.index')}}"><i class="fas fa-grip-horizontal"></i><span>Category</span></a>
             </li>
             <li class="{{request()->routeIs('menu.*')?'active':''}}"><a class="nav-link" href="{{route('menu.index')}}"><i class="fas fa-clipboard-list"></i><span>MenuItem</span></a>
-            <li><a class="nav-link" href="timeline.html"><i class="fas fa-cart-plus"></i><span>Order</span></a></li>
+            <li><a class="nav-link" href="{{route('order.index')}}" class="{{request()->routeIs('order.*')?'active':''}}"><i class="fas fa-cart-plus"></i><span>Order</span></a></li>
             </li>
 
 

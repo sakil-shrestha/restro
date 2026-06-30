@@ -97,12 +97,7 @@
     <script>
         async function toggleStatus(checkbox,menuId)
         {
-            // here checkbox in whole input tag
-            // this one
-            // checkbox=<input type="checkbox" name="is_available" value="1"
-            //                                 onChange='toggleStatus(this,{{ $menu->id }})'
-            //                                 class="custom-control-input menu-toggle" id="toggle-{{ $menu->id }}"
-            //                                 data-id="{{ $menu->id }}" {{ $menu->is_available ? 'checked' : '' }}>
+
             const isAvailable=checkbox.checked?1:0;
 
             // nextElementSibing is the sibling element of input i.e label tag
