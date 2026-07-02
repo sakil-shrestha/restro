@@ -35,7 +35,9 @@ Route::middleware('auth')->group(function()
     //Menu routes
     Route::resource('menu',MenuController::class);
     Route::patch('menu/{menu}/status',[MenuController::class,'updateStatus']);
+    //oder routes
     Route::resource('order',orderController::class);
+    Route::patch('order/{order}/status',[orderController::class,'updateStatus']);
 
 
 });

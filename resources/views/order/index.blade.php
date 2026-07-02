@@ -26,6 +26,7 @@
                             <th>Table Number</th>
                             <th>Order Items</th>
                             <th>Total Price</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
 
@@ -56,15 +57,17 @@
                                    }}
 
                                 </td>
-
-                                {{-- <td>
-                                    <select name="status" class="form-control select2 status-select"
-                                        data-id="{{ $category->id }}">
-                                        <option value="active" {{$category->status==="active"?'selected':''}}>Active</option>
-                                        <option value="inactive" {{$category->status==="inactive"?'selected':''}}>InActive</option>
+                                <td>
+                                    <select name="status" class="form-control select2 status-select" data-id="{{$order->id}}">
+                                       <option value="pending" {{old('status',$order->status)==='pending'?'selected':''}}>Pending</option>
+                                       <option value="preparing" {{old('status',$order->status)==='preparing'?'selected':''}}>Preparing</option>
+                                       <option value="ready" {{old('status',$order->status)==='ready'?'selected':''}}>Ready</option>
+                                       <option value="served" {{old('status',$order->status)==='served'?'selected':''}}>Served</option>
+                                       <option value="completed" {{old('status',$order->status)==='completed'?'selected':''}}>Completed</option>
+                                       <option value="cancelled" {{old('status',$order->status)==='cancelled'?'selected':''}}>Cancelled</option>
                                     </select>
+                                </td>
 
-                                </td> --}}
 
                                 <td class="d-flex gap-2">
                                     <a href="{{ route('order.edit', $order->id) }}"
@@ -92,38 +95,40 @@
         </div>
     </div>
 
-    {{-- <script>
-        document.querySelectorAll('.status-select').forEach(select=>{
-            select.addEventListener('change',async function(){
-                const categoryId=this.getAttribute('data-id');
-                const status=this.value;
-                console.log(status);
+<script>
+    document.querySelectorAll('.status-select').forEach((select)=>{
+       select.addEventListener('change',async function(){
+            const orderId=this.getAttribute('data-id');
+            const status=this.value;
+            try{
+                const response=await fetch(`order/${orderId}/status`,{
+                    method:'PATCH',
+                    headers:{
+                        'Content-Type':'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || "{{ csrf_token() }}" // 2. Added CSRF token
+                    },
+                    body:JSON.stringify({
+                        status:status,
+                    }),
+                });
+                const data= await response.json();
 
-                try{
-                    const response=await fetch(`/category/${categoryId}/status`,{
-                        method:"PATCH",
-                        headers:{
-                            "Content-Type":'application/json',
-                            "X-CSRF-TOKEN":"{{csrf_token()}}"
-                        },
-                        body:JSON.stringify({
-                            status:status,
-                        }),
-                    });
-                    if(!response.ok)
-                    {
-                        throw new Error('network error');
-                    }
-                    const data=await response.json();
-                    console.log(data);
-                    alert(data.message);
 
-                }catch(error)
+                if(!response.ok)
                 {
-                    alert(error);
+                    alert(data.message || 'Failed to update status');
                 }
-            });
+                if(data.status)
+                {
+                    alert(data.message || 'Status updated successfully');
+                }
+
+
+            }catch(error){
+                alert('An error occurred while updating the status');
+            }
         });
-    </script> --}}
+    });
+</script>
 
 </x-layout.admin-layout>
