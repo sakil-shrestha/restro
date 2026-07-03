@@ -14,7 +14,6 @@ class OrderController extends Controller
     public function order(Request $request)
     {
 
-
         $customer=Customer::Create([
             'name'=>$request->customer_name,
             'email'=>$request->customer_email,

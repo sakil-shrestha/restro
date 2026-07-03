@@ -16,6 +16,7 @@ class MenuController extends Controller
             try{
 
                 $menus=MenuItem::with('category')->get();
+
                 $categories=Category::all();
 
                 return response()->json([
