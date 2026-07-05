@@ -1,59 +1,308 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ☕ Cafe Selah
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern cafe management and ordering system built with Laravel. Cafe Selah helps manage menus, orders, customers, and daily operations through a clean and user-friendly interface.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📖 About
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Cafe Selah is designed to simplify café operations by providing an efficient platform for managing products, customer orders, and administrative tasks.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Whether you're handling dine-in, takeaway, or online orders, Cafe Selah offers an organized workflow that improves productivity and customer experience.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## ✨ Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- 🔐 User Authentication
+- 👥 Role-Based Access Control (Admin & Staff)
+- ☕ Product/Menu Management
+- 📂 Category Management
+- 🛒 Order Management
+- 💳 Payment Management
+- 📊 Dashboard with Statistics
+- 🔍 Search & Filtering
+- 📱 Responsive Design
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠️ Tech Stack
 
-### Premium Partners
+### Backend
+- Laravel
+- PHP
+- MySQL
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Frontend
+- Blade Templates
+- Bootstrap / Tailwind CSS
+- JavaScript
 
-## Contributing
+### Development Tools
+- Composer
+- Git
+- GitHub
+- Vite
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 📁 Project Structure
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+app/
+bootstrap/
+config/
+database/
+public/
+resources/
+routes/
+storage/
+tests/
+vendor/
+.env
+artisan
+composer.json
+README.md
+```
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## ⚙️ Installation
 
-## License
+### 1. Clone the repository
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+git clone https://github.com/your-username/cafe-selah.git
+```
+
+### 2. Navigate to the project
+
+```bash
+cd cafe-selah
+```
+
+### 3. Install dependencies
+
+```bash
+composer install
+```
+
+```bash
+npm install
+```
+
+### 4. Copy environment file
+
+```bash
+cp .env.example .env
+```
+
+### 5. Generate application key
+
+```bash
+php artisan key:generate
+```
+
+### 6. Configure database
+
+Update your `.env` file.
+
+```env
+DB_DATABASE=cafe_selah
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 7. Run migrations
+
+```bash
+php artisan migrate
+```
+
+If you have seeders:
+
+```bash
+php artisan db:seed
+```
+
+### 8. Build frontend assets
+
+```bash
+npm run dev
+```
+
+For production:
+
+```bash
+npm run build
+```
+
+### 9. Start the development server
+
+```bash
+php artisan serve
+```
+
+Visit:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## 📷 Screenshots
+
+Add screenshots of:
+
+- Login Page
+- Dashboard
+- Menu Management
+- Orders
+- Payment
+- Reports
+
+Example:
+
+```
+docs/
+    dashboard.png
+    orders.png
+    menu.png
+```
+
+---
+
+## 🔑 Default Roles
+
+### Admin
+
+- Manage users
+- Manage menu
+- Manage categories
+- View reports
+- Manage orders
+
+### Staff
+
+- Create orders
+- Update order status
+- View menu
+
+---
+
+## 📂 Environment Variables
+
+Example:
+
+```env
+APP_NAME="Cafe Selah"
+APP_ENV=local
+APP_DEBUG=true
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=cafe_selah
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+---
+
+## 🚀 Available Commands
+
+Run development server
+
+```bash
+php artisan serve
+```
+
+Run migrations
+
+```bash
+php artisan migrate
+```
+
+Rollback migrations
+
+```bash
+php artisan migrate:rollback
+```
+
+Clear cache
+
+```bash
+php artisan optimize:clear
+```
+
+Run tests
+
+```bash
+php artisan test
+```
+
+Compile assets
+
+```bash
+npm run dev
+```
+
+Production build
+
+```bash
+npm run build
+```
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository.
+2. Create a feature branch.
+
+```bash
+git checkout -b feature/new-feature
+```
+
+3. Commit your changes.
+
+```bash
+git commit -m "Add new feature"
+```
+
+4. Push your branch.
+
+```bash
+git push origin feature/new-feature
+```
+
+5. Open a Pull Request.
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Sakil Shrestha**
+
+GitHub: https://github.com/sakil-shrestha
+
+---
+
+## ❤️ Acknowledgements
+
+- Laravel
+- Bootstrap
+- Vite
+- MySQL
+- PHP Community
+
+---
+
+> Built with ❤️ for Cafe Selah.
